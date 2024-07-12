@@ -9,13 +9,25 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class MyController {
 
+  //PROPERTIES
   MyService myService;
 
+  //=======================================================================
+  // CONSTRUCTORS
+  //=======================================================================
   @Autowired
   public MyController(MyService myService) {
+    System.out.println("MyController(MyService myService)");
     this.myService = myService;
   }
+  
+  public MyController() {
+    System.out.println("MyController()");
+  }
 
+  //=======================================================================
+  // HELLO
+  //=======================================================================
   @ResponseBody
   @RequestMapping("/Hello")
   public String hello() {
